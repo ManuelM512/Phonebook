@@ -31,12 +31,14 @@ namespace Library
 
             return result;
         }
-        public void Send(string[] names, IMessageChannel IMessageChannel, string text){
+        public void Send(string[] names, IMessageChannel iMessageChannel, string text){
             var contacts = Search(names);
             foreach (Contact c in contacts){
-                Message message = IMessageChannel.NewMessage(Owner, c);
-                message.Text = text;
-                IMessageChannel.Send(message);
+                if (iMessageChannel != null){
+                    Message message = iMessageChannel.NewMessage(Owner, c);
+                    message.Text = text;
+                    iMessageChannel.Send(message);
+                }
             }  
             
         }
