@@ -31,5 +31,29 @@ namespace Library
 
             return result;
         }
+        public void Send(string[] names, IMessageChannel IMessageChannel, string text){
+            var contacts = Search(names);
+            foreach (Contact c in contacts){
+                Message message = IMessageChannel.NewMessage(Owner, c);
+                message.Text = text;
+                IMessageChannel.Send(message);
+            }  
+            
+        }
+
+        //Aplicando Creator
+        public void Add(string name, string phone, string email, string twitterId){
+            Contact contacto = new Contact(name);
+            contacto.Email = email;
+            contacto.TwitterId = twitterId;
+            contacto.Phone = phone;
+            persons.Add(contacto);
+        }
+
+        public void Remove(Contact contact){
+            persons.Remove(contact);
+        }
+
+
     }
 }

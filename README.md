@@ -15,6 +15,7 @@ Crear una lista de contactos capaz de enviar mensajes por diferentes canales tal
 |Conocer el nombre||
 |Conocer el teléfono||
 |Conocer el correo electrónico||
+|Conocer el ID de Twitter||
 
 Se provee la clase [Contact](https://github.com/ucudal/PII_Phonebook_Start/blob/master/src/Library/Contact.cs)
 
